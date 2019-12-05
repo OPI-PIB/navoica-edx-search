@@ -232,7 +232,7 @@ def course_discovery(request):
             err
         )
     
-    result['results'] = [org_name(c) in c for results['results']]
+    result['results'] = [org_name(c) for c in results['results']]
     
     return JsonResponse(results, status=status_code)
 
