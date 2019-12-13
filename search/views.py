@@ -231,12 +231,5 @@ def course_discovery(request):
             request.user.id,
             err
         )
-    
-    results['results'] = [org_name(c) for c in results['results']]
-    
-    return JsonResponse(results, status=status_code)
 
-def org_name(c):
-    if (c['data']['organizer']):
-        c['data']['org_name'] = settings.ALL_COURSE_ORGANIZER[int(c['data']['organizer'])-1][1]
-    return c
+    return JsonResponse(results, status=status_code)
